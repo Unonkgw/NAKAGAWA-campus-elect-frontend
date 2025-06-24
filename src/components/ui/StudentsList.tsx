@@ -6,7 +6,7 @@ export type StudentType = {
   email: string;
   name: string;
   role: "STUDENT" | "ADMIN";
-}
+};
 
 const StudentsList = async () => {
   const res = await fetch(
@@ -15,13 +15,11 @@ const StudentsList = async () => {
 
   const students: StudentType[] = await res.json();
 
-  // return <div>{JSON.stringify(students)}</div>;
-
   return (
     <div>
-    {students.map((student, index) => {
-      return <p key={`${student}_${index}}`}>{student.name}</p>;
-    })}
+      {students.map((student, index) => {
+        return <p key={`${student}_${index}}`}>{student.name}</p>;
+      })}
     </div>
   );
 };
